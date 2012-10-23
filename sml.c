@@ -9,13 +9,15 @@
 static int acc, inscnt, insreg, opcode, oprand;
 
 void welcome() {
-	printf("Welcome to sml\n");
+	printf("Welcome to Simpletron\n");
 }
 
-void input() {
+void input(int hasinputfile) {
 	int i,t;
 	for (i = 0; i < MEMORYSIZE; i++) {
-		printf("%d", i);
+		if (!hasinputfile) {
+			printf("%d", i);
+		}
 		scanf("%d", &t);
 		if (t == -99999) break;
 		memory[i] = t;
@@ -102,7 +104,7 @@ int main(int argc, char *argv[]) {
 	if (argc == 3) {
 		freopen(argv[2], "w", stdout);
 	}
-	input();
+	input(argc > 1);
 	freopen("/dev/tty", "r", stdin);
 	r = sim();
 	switch(r) {

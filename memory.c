@@ -2,6 +2,8 @@
 
 #define OPMOD MEMORYSIZE
 
+int memory[MEMORYSIZE];
+
 int get_opcode(int value)
 {
 	return value/OPMOD;
