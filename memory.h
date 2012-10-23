@@ -7,6 +7,6 @@ extern int memory[MEMORYSIZE];
 
 extern int get_opcode(int value);
 extern int get_oprand(int value);
-extern int get_value(int opcode, int oprand);
+extern int get_ins(int opcode, int oprand);
 
 #endif

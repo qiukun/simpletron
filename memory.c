@@ -12,7 +12,7 @@ int get_oprand(int value)
 	return value%OPMOD;
 }
 
-int get_value(int opcode, int oprand)
+int get_ins(int opcode, int oprand)
 {
 	return opcode * OPMOD + oprand;
 }
