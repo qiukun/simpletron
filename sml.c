@@ -6,14 +6,20 @@
 #define UNVALIDOPCODE 2
 #define ACCOVERFLOW 3
 
-static int acc, inscnt, insreg, opcode, oprand;
+// Registers
+static int acc, // Accumulator
+	   inscnt, // Instruction counter
+	   insreg, // Instruction register
+	   opcode, // Operation code
+	   oprand; // Oprand
 
 void welcome() {
 	printf("Welcome to Simpletron\n");
 }
 
 void input(int hasinputfile) {
-	int i,t;
+	int i, t;
+
 	for (i = 0; i < MEMORYSIZE; i++) {
 		if (!hasinputfile) {
 			printf("%d", i);
@@ -26,6 +32,7 @@ void input(int hasinputfile) {
 
 void dump() {
 	int i;
+
 	printf("acc:%d\n", acc);
 	printf("inscnt:%d\n", inscnt);
 	printf("insreg:%d\n", insreg);
@@ -38,10 +45,12 @@ void dump() {
 
 int sim(){
 	int s; // Temp var for overflow checking
+
 	while (1) {
 		insreg = memory[inscnt];
 		opcode = get_opcode(insreg);
 		oprand = get_oprand(insreg);
+
 		switch (opcode) {
 			case 0:
 				break;
@@ -97,7 +106,9 @@ int sim(){
 
 int main(int argc, char *argv[]) {
 	int r;
+
 	welcome();
+
 	if (argc > 1) {
 		freopen(argv[1], "r", stdin);
 	}
@@ -105,6 +116,7 @@ int main(int argc, char *argv[]) {
 		freopen(argv[2], "w", stdout);
 	}
 	input(argc > 1);
+
 	freopen("/dev/tty", "r", stdin);
 	r = sim();
 	switch(r) {
@@ -121,5 +133,7 @@ int main(int argc, char *argv[]) {
 			break;
 	}
 	dump();
+
+	return 0;
 }
 
