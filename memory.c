@@ -4,14 +4,14 @@
 
 int memory[MEMORYSIZE];
 
-int get_opcode(int value)
+int get_opcode(int ins)
 {
-	return value/OPMOD;
+	return ins/OPMOD;
 }
 
-int get_oprand(int value)
+int get_oprand(int ins)
 {
-	return value%OPMOD;
+	return ins%OPMOD;
 }
 
 int get_ins(int opcode, int oprand)
