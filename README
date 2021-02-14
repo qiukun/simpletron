@@ -1,2 +1,5 @@
 Simpletron is a machine that runs sml code.
 This project implements the machine and provides some apis.
+
+References:
+[A Neat C Preprocessor Trick](https://kchodorow.com/2013/08/24/a-neat-c-preprocessor-trick/)
