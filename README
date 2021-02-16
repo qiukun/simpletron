@@ -1,7 +1,6 @@
 Simpletron is a machine that runs sml code.
 
 Todo: Use the trick to construct salc and write tests.
-Issue: tup is not available on m1, Makefile may be needed.
 
 References:
 [Lecture 5: Computer Architecture](http://web.cs.wpi.edu/~jburge/courses/c01/cs2011/lectures/lecture5.pdf)
